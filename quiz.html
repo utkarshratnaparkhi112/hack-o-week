@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ultimate Quiz App</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial;
+margin:0;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#5f2c82,#49a09d);
+}
+
+.quiz-box{
+background:white;
+width:450px;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 40px rgba(0,0,0,0.3);
+text-align:center;
+}
+
+h1{
+margin-bottom:10px;
+}
+
+#timer{
+font-size:18px;
+color:#ff4444;
+margin-bottom:10px;
+}
+
+.progress-bar{
+height:10px;
+background:#eee;
+border-radius:10px;
+margin-bottom:20px;
+overflow:hidden;
+}
+
+.progress{
+height:100%;
+width:0%;
+background:#49a09d;
+transition:0.3s;
+}
+
+#question{
+font-size:20px;
+margin-bottom:20px;
+}
+
+.answer-btn{
+display:block;
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+border-radius:8px;
+background:#f1f1f1;
+cursor:pointer;
+font-size:16px;
+transition:0.2s;
+}
+
+.answer-btn:hover{
+background:#49a09d;
+color:white;
+}
+
+.correct{
+background:#4CAF50 !important;
+color:white;
+}
+
+.wrong{
+background:#f44336 !important;
+color:white;
+}
+
+#next{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+border-radius:8px;
+background:#5f2c82;
+color:white;
+cursor:pointer;
+display:none;
+}
+
+.restart{
+margin-top:20px;
+padding:10px 20px;
+border:none;
+border-radius:8px;
+background:#49a09d;
+color:white;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="quiz-box">
+
+<h1>Ultimate Quiz</h1>
+
+<div id="timer">Time: 15</div>
+
+<div class="progress-bar">
+<div class="progress" id="progress"></div>
+</div>
+
+<div id="question">Question</div>
+
+<div id="answers"></div>
+
+<button id="next">Next</button>
+
+</div>
+
+<script>
+
+const quiz=[
+
+{
+question:"What is the capital of India?",
+answers:["Mumbai","Delhi","Kolkata","Chennai"],
+correct:1
+},
+
+{
+question:"Which language runs in a browser?",
+answers:["Python","C++","JavaScript","Java"],
+correct:2
+},
+
+{
+question:"Which company developed Windows?",
+answers:["Apple","Microsoft","Google","IBM"],
+correct:1
+},
+
+{
+question:"What does CSS stand for?",
+answers:[
+"Cascading Style Sheets",
+"Computer Style System",
+"Creative Style Syntax",
+"Color Style Sheets"],
+correct:0
+},
+
+{
+question:"Which planet is known as the Red Planet?",
+answers:["Earth","Mars","Jupiter","Saturn"],
+correct:1
+}
+
+];
+
+let current=0;
+let score=0;
+let time=15;
+let timer;
+
+const question=document.getElementById("question");
+const answers=document.getElementById("answers");
+const next=document.getElementById("next");
+const progress=document.getElementById("progress");
+const timerText=document.getElementById("timer");
+
+function startTimer(){
+
+clearInterval(timer);
+
+time=15;
+
+timerText.innerText="Time: "+time;
+
+timer=setInterval(()=>{
+
+time--;
+
+timerText.innerText="Time: "+time;
+
+if(time===0){
+clearInterval(timer);
+next.style.display="block";
+}
+
+},1000);
+
+}
+
+function showQuestion(){
+
+reset();
+
+let q=quiz[current];
+
+question.innerText=(current+1)+". "+q.question;
+
+q.answers.forEach((ans,i)=>{
+
+let btn=document.createElement("button");
+
+btn.innerText=ans;
+
+btn.classList.add("answer-btn");
+
+btn.onclick=()=>select(btn,i);
+
+answers.appendChild(btn);
+
+});
+
+updateProgress();
+
+startTimer();
+
+}
+
+function reset(){
+
+answers.innerHTML="";
+
+next.style.display="none";
+
+}
+
+function select(button,index){
+
+clearInterval(timer);
+
+let correct=quiz[current].correct;
+
+if(index===correct){
+
+button.classList.add("correct");
+
+score++;
+
+}else{
+
+button.classList.add("wrong");
+
+}
+
+Array.from(answers.children).forEach((btn,i)=>{
+
+if(i===correct){
+
+btn.classList.add("correct");
+
+}
+
+btn.disabled=true;
+
+});
+
+next.style.display="block";
+
+}
+
+next.onclick=()=>{
+
+current++;
+
+if(current<quiz.length){
+
+showQuestion();
+
+}else{
+
+showScore();
+
+}
+
+}
+
+function updateProgress(){
+
+let percent=(current/quiz.length)*100;
+
+progress.style.width=percent+"%";
+
+}
+
+function showScore(){
+
+document.querySelector(".quiz-box").innerHTML=`
+
+<h1>Quiz Completed 🎉</h1>
+
+<h2>Your Score: ${score} / ${quiz.length}</h2>
+
+<button class="restart" onclick="location.reload()">Restart Quiz</button>
+
+`;
+
+}
+
+showQuestion();
+
+</script>
+
+</body>
+</html>
