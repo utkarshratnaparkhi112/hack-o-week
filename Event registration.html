@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cricket Championship 2026</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+/* HERO */
+
+.hero{
+height:70vh;
+background:url("https://images.unsplash.com/photo-1593341646782-e0b495cff86d") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+background:rgba(0,0,0,0.6);
+padding:20px 40px;
+border-radius:10px;
+font-size:48px;
+}
+
+/* NAVBAR */
+
+nav{
+background:#020617;
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 20px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#22c55e;
+}
+
+/* SECTION */
+
+section{
+padding:60px 10%;
+}
+
+h2{
+text-align:center;
+margin-bottom:30px;
+color:#22c55e;
+}
+
+/* INFO CARD */
+
+.info{
+background:#1e293b;
+padding:25px;
+border-radius:10px;
+margin-bottom:30px;
+}
+
+/* FORM */
+
+form{
+background:#1e293b;
+padding:25px;
+border-radius:10px;
+max-width:600px;
+margin:auto;
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#22c55e;
+border:none;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#16a34a;
+}
+
+/* TABLE */
+
+table{
+width:100%;
+border-collapse:collapse;
+background:#1e293b;
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #334155;
+text-align:center;
+}
+
+th{
+background:#020617;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<h1>Cricket Championship 2026</h1>
+</div>
+
+<nav>
+<a href="#event">Event</a>
+<a href="#register">Register</a>
+<a href="#schedule">Schedule</a>
+<a href="#leaderboard">Leaderboard</a>
+</nav>
+
+<section id="event">
+
+<h2>Event Details</h2>
+
+<div class="info">
+
+<p><b>Tournament:</b> City Cricket Championship</p>
+<p><b>Date:</b> 15 April 2026</p>
+<p><b>Venue:</b> Central Cricket Ground</p>
+<p><b>Entry Fee:</b> ₹500 per team</p>
+<p><b>Prize:</b> ₹10,000 + Trophy 🏆</p>
+
+</div>
+
+</section>
+
+<section id="register">
+
+<h2>Team Registration</h2>
+
+<form>
+
+<input type="text" placeholder="Team Name" required>
+<input type="text" placeholder="Captain Name" required>
+<input type="tel" placeholder="Phone Number" required>
+<input type="email" placeholder="Email Address">
+
+<select>
+<option>11 Players</option>
+<option>12 Players</option>
+<option>13 Players</option>
+<option>15 Players</option>
+</select>
+
+<button type="submit">Register Team</button>
+
+</form>
+
+</section>
+
+<section id="schedule">
+
+<h2>Match Schedule</h2>
+
+<table>
+
+<tr>
+<th>Date</th>
+<th>Match</th>
+<th>Time</th>
+</tr>
+
+<tr>
+<td>15 April</td>
+<td>Team A vs Team B</td>
+<td>9:00 AM</td>
+</tr>
+
+<tr>
+<td>15 April</td>
+<td>Team C vs Team D</td>
+<td>12:00 PM</td>
+</tr>
+
+<tr>
+<td>16 April</td>
+<td>Semi Final</td>
+<td>10:00 AM</td>
+</tr>
+
+<tr>
+<td>17 April</td>
+<td>Final Match</td>
+<td>4:00 PM</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="leaderboard">
+
+<h2>Leaderboard</h2>
+
+<table>
+
+<tr>
+<th>Rank</th>
+<th>Team</th>
+<th>Points</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Warriors</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Strikers</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Super Kings</td>
+<td>2</td>
+</tr>
+
+</table>
+
+</section>
+
+<footer>
+
+<p>© 2026 Cricket Championship | All Rights Reserved</p>
+
+</footer>
+
+</body>
+</html>
