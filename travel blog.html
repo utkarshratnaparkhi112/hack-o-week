@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explorer Travel Blog</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#f4f6fb;
+color:#333;
+transition:0.3s;
+}
+
+/* DARK MODE */
+
+.dark{
+background:#121212;
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+background:#0a2540;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 10%;
+position:sticky;
+top:0;
+}
+
+nav h2{
+color:white;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+padding:10px 15px;
+}
+
+nav button{
+background:#00b894;
+border:none;
+padding:8px 15px;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
+
+/* HERO */
+
+.hero{
+height:60vh;
+background:url("https://picsum.photos/1600/800?travel") center/cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+}
+
+.hero h1{
+font-size:55px;
+}
+
+.hero p{
+margin-top:10px;
+font-size:20px;
+}
+
+/* SECTION */
+
+section{
+padding:60px 10%;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+/* FILTER BUTTONS */
+
+.filters{
+text-align:center;
+margin-bottom:30px;
+}
+
+.filters button{
+margin:5px;
+padding:10px 20px;
+border:none;
+background:#00b894;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
+
+/* BLOG CARDS */
+
+.posts{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+
+.card{
+background:white;
+width:300px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.dark .card{
+background:#1e1e1e;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card-content h3{
+margin-bottom:10px;
+}
+
+.card-content button{
+margin-top:10px;
+padding:8px 12px;
+background:#0984e3;
+border:none;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+}
+
+/* CONTACT */
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input,textarea{
+padding:10px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button.submit{
+background:#00b894;
+border:none;
+padding:10px;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
+
+/* FOOTER */
+
+footer{
+background:#0a2540;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>Explorer</h2>
+
+<ul>
+<li><a href="#blog">Blog</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<button onclick="toggleDark()">Dark Mode</button>
+</nav>
+
+<div class="hero">
+<h1>Explore The World</h1>
+<p>Travel stories, tips and adventures</p>
+</div>
+
+<section id="blog">
+
+<h2>Travel Blog</h2>
+
+<div class="filters">
+<button onclick="filterPosts('all')">All</button>
+<button onclick="filterPosts('mountain')">Mountains</button>
+<button onclick="filterPosts('beach')">Beaches</button>
+<button onclick="filterPosts('city')">Cities</button>
+</div>
+
+<div class="posts">
+
+<div class="card" data-category="mountain">
+<img src="https://picsum.photos/400/300?mountain">
+<div class="card-content">
+<h3>Mountain Adventure</h3>
+<p>Discover breathtaking hiking trails.</p>
+<button>Read More</button>
+</div>
+</div>
+
+<div class="card" data-category="beach">
+<img src="https://picsum.photos/400/300?beach">
+<div class="card-content">
+<h3>Tropical Beach</h3>
+<p>Relax on the world's most beautiful beaches.</p>
+<button>Read More</button>
+</div>
+</div>
+
+<div class="card" data-category="city">
+<img src="https://picsum.photos/400/300?city">
+<div class="card-content">
+<h3>City Life</h3>
+<p>Explore vibrant cultures and nightlife.</p>
+<button>Read More</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<h2>Travel Gallery</h2>
+
+<div class="gallery">
+<img src="https://picsum.photos/500/400?travel1">
+<img src="https://picsum.photos/500/400?travel2">
+<img src="https://picsum.photos/500/400?travel3">
+<img src="https://picsum.photos/500/400?travel4">
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>About</h2>
+
+<p style="max-width:700px;margin:auto;text-align:center;">
+Explorer is a travel blog sharing destinations, travel tips,
+and experiences from around the world. Follow along for
+adventure inspiration.
+</p>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Message"></textarea>
+<button class="submit">Send Message</button>
+</form>
+
+</section>
+
+<footer>
+<p>© 2026 Explorer Travel Blog</p>
+</footer>
+
+<script>
+
+/* DARK MODE */
+
+function toggleDark(){
+document.body.classList.toggle("dark");
+}
+
+/* FILTER POSTS */
+
+function filterPosts(category){
+
+let posts=document.querySelectorAll(".card");
+
+posts.forEach(post=>{
+
+if(category==="all"){
+post.style.display="block";
+}
+else{
+if(post.dataset.category===category){
+post.style.display="block";
+}
+else{
+post.style.display="none";
+}
+}
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
