@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Bites Restaurant</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#111;
+color:white;
+}
+
+/* HERO */
+
+.hero{
+height:70vh;
+background:url("https://images.unsplash.com/photo-1504674900247-0877df9cc836") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:50px;
+background:rgba(0,0,0,0.6);
+padding:20px 40px;
+border-radius:10px;
+}
+
+/* NAVBAR */
+
+nav{
+background:black;
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+margin:0 20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:orange;
+}
+
+/* SECTION */
+
+section{
+padding:60px 10%;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+color:orange;
+}
+
+/* MENU GRID */
+
+.menu{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#1e1e1e;
+border-radius:12px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.price{
+color:orange;
+font-weight:bold;
+margin:10px 0;
+}
+
+button{
+background:orange;
+border:none;
+padding:10px 15px;
+border-radius:5px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#ffb347;
+}
+
+/* FOOTER */
+
+footer{
+background:black;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<h1>Royal Bites Restaurant</h1>
+</div>
+
+<nav>
+<a href="#starters">Starters</a>
+<a href="#main">Main Course</a>
+<a href="#desserts">Desserts</a>
+<a href="#drinks">Drinks</a>
+</nav>
+
+<section id="starters">
+
+<h2>Starters</h2>
+
+<div class="menu">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
+<div class="card-content">
+<h3>Paneer Tikka</h3>
+<p>Grilled paneer with spices.</p>
+<p class="price">₹180</p>
+<button>Order Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1604909052743-94e838986d24">
+<div class="card-content">
+<h3>Chicken Wings</h3>
+<p>Spicy crispy wings.</p>
+<p class="price">₹220</p>
+<button>Order Now</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="main">
+
+<h2>Main Course</h2>
+
+<div class="menu">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398">
+<div class="card-content">
+<h3>Butter Chicken</h3>
+<p>Creamy tomato chicken curry.</p>
+<p class="price">₹320</p>
+<button>Order Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1589308078054-8321e0f4a2b2">
+<div class="card-content">
+<h3>Veg Biryani</h3>
+<p>Fragrant rice with spices.</p>
+<p class="price">₹240</p>
+<button>Order Now</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="desserts">
+
+<h2>Desserts</h2>
+
+<div class="menu">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1605475128023-3c63c4c9d8a0">
+<div class="card-content">
+<h3>Chocolate Brownie</h3>
+<p>Warm brownie with chocolate sauce.</p>
+<p class="price">₹140</p>
+<button>Order Now</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="drinks">
+
+<h2>Drinks</h2>
+
+<div class="menu">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551024601-bec78aea704b">
+<div class="card-content">
+<h3>Cold Coffee</h3>
+<p>Refreshing iced coffee.</p>
+<p class="price">₹120</p>
+<button>Order Now</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551024709-8f23befc6a1c">
+<div class="card-content">
+<h3>Mango Shake</h3>
+<p>Sweet mango milkshake.</p>
+<p class="price">₹150</p>
+<button>Order Now</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Royal Bites Restaurant</p>
+</footer>
+
+</body>
+</html>
